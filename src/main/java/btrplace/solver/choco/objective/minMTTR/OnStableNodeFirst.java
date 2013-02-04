@@ -34,7 +34,7 @@ import java.util.UUID;
  *
  * @author Fabien Hermenier
  */
-public class PureIncomingFirst2 extends AbstractIntVarSelector {
+public class OnStableNodeFirst extends AbstractIntVarSelector {
 
     private IntDomainVar[] hoster;
 
@@ -58,7 +58,7 @@ public class PureIncomingFirst2 extends AbstractIntVarSelector {
      * @param rp      the problem to rely on
      * @param actions the actions to consider.
      */
-    public PureIncomingFirst2(ReconfigurationProblem rp, List<ActionModel> actions) {
+    public OnStableNodeFirst(ReconfigurationProblem rp, List<ActionModel> actions) {
         super(rp.getSolver(), ActionModelUtils.getStarts(actions.toArray(new ActionModel[actions.size()])));
         this.pb = rp;
         Mapping cfg = rp.getSourceModel().getMapping();

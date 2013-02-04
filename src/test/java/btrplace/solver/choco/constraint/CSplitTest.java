@@ -97,7 +97,6 @@ public class CSplitTest extends ConstraintTestMaterial {
 
     @Test
     public void testContinuous() throws SolverException {
-
         Mapping map = new MappingBuilder().on(n1, n2, n3, n4, n5)
                 .run(n1, vm1, vm2)
                 .run(n3, vm3, vm4, vm5)
