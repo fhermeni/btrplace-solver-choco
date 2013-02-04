@@ -97,10 +97,6 @@ public class RandomVMPlacement implements ValSelector<IntDomainVar> {
                         values[i].add(v);
                     }
                 }
-                //If there is a candidate in the first group, we can stop
-                if (ranks[0] != null) {
-                    break;
-                }
             }
         } finally {
             ite.dispose();
