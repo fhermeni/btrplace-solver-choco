@@ -57,17 +57,19 @@ public class MinMTTR implements ReconfigurationObjective {
         IntDomainVar[] costs = mttrs.toArray(new IntDomainVar[mttrs.size()]);
         CPSolver s = rp.getSolver();
         IntDomainVar cost = s.createBoundIntVar(rp.makeVarLabel("globalCost"), 0, Choco.MAX_UPPER_BOUND);
-        s.post(s.eq(cost, CPSolver.sum(costs)));
+/*
+       s.post(s.eq(cost, CPSolver.sum(costs)));
 
 
         s.getConfiguration().putEnum(Configuration.RESOLUTION_POLICY, ResolutionPolicy.MINIMIZE);
         s.setObjective(cost);
-
+  */
         injectPlacementHeuristic(rp, new HashSet<UUID>(), cost);
     }
 
     private void injectPlacementHeuristic(ReconfigurationProblem rp, Set<UUID> managedVMs, IntDomainVar cost) {
 
+        System.out.println("to manage: " + managedVMs.size());
         Model mo = rp.getSourceModel();
         Mapping map = mo.getMapping();
 

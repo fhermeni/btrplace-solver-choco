@@ -527,7 +527,7 @@ public class BinPacking extends AbstractLargeIntSConstraint {
                 bins[bsToVars[ibIdx]].instantiate(bin, this, false);
                 ret = true;
             } else {
-                //System.err.println("Stop");
+                //System.err.println("Stop at " + ibIdx + "/" + candidates[bin].size() + " for " + pretty());
                 break;
             }
         }
